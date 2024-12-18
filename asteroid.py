@@ -31,9 +31,9 @@ class Asteroid(CircleShape):
             new_radius = self.radius - ASTEROID_MIN_RADIUS
 
             asteroid = Asteroid(self.position.x, self.position.y, new_radius) 
-            asteroid.velocity = self.velocity.rotate(angle) * 1.2
+            asteroid.velocity = self.velocity.rotate(angle) * 1.6
             asteroid = Asteroid(self.position.x, self.position.y, new_radius)  
-            asteroid.velocity = self.velocity.rotate(-angle) *1.2
+            asteroid.velocity = self.velocity.rotate(-angle) * 1.6
 
           #  asteroid1.containers = (updatable, drawable, asteroids) 
           #  asteroid2.containers = (updatable, drawable, asteroids) 
