@@ -1,7 +1,7 @@
 import pygame 
 from constants import *
 from player import *
-from asteroid import * 
+from asteroid import *
 from asteroidfield import *
 from shot import *
 
@@ -44,7 +44,7 @@ def main():
 
             for shot in shots: 
                 if asteroid.collision_check(shot) == True:
-                    CircleShape.kill(asteroid) 
+                    asteroid.split()
                     CircleShape.kill(shot)
 
        # for instance in shots: 
