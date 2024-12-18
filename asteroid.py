@@ -4,6 +4,8 @@ from circleshape import *
 class Asteroid(CircleShape):
     def __init__(self, x, y, radius):
         super().__init__(x, y, PLAYER_RADIUS) 
+        self.x = x 
+        self.y = y  
         self.radius = radius 
 
     def draw(self, screen):
@@ -11,3 +13,9 @@ class Asteroid(CircleShape):
 
     def update(self, dt):
         self.position += (self.velocity * dt)
+
+    def collision_check(self, shots):
+        if (self.position.distance_to(shots.position)) < self.radius + shots.radius:
+            return True
+        else: 
+            return False

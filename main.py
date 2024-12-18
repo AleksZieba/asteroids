@@ -36,10 +36,19 @@ def main():
             instance.update(dt)
         #player.update(dt)
 
-        for instance in asteroids: 
-            if player.collision_check(instance) == True:
+        for asteroid in asteroids: 
+            for shot in shots: 
+                if asteroid.collision_check(shot) == True:
+                    Asteroid.kill(asteroid) 
+                    Shot.kill(shot)
+
+            if player.collision_check(asteroid) == True:
                 print("Game Over!")
                 return
+
+       # for instance in shots: 
+        #    if asteroids.collision_check(self, instance) == True: 
+        #        self.kill()
 
         screen.fill((0,0,0)) 
 
